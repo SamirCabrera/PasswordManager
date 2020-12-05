@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CategoryModalComponent } from './pages/homepage/modals/category-modal/category-modal.component';
+import { ListSiteModalComponent } from './pages/homepage/modals/list-site-modal/list-site-modal.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,7 +11,7 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent, ListSiteModalComponent, CategoryModalComponent
       ],
     }).compileComponents();
   }));
