@@ -19,7 +19,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -42,11 +42,12 @@ import { MatMenuModule } from '@angular/material/menu';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule
   ],
   exports: [MatCardModule, MatButtonModule, MatGridListModule, MatTabsModule, MatToolbarModule,
             MatInputModule, MatIconModule, MatFormFieldModule, FormsModule, MatCheckboxModule,
             MatSelectModule, ReactiveFormsModule, MatExpansionModule, MatTableModule, MatPaginatorModule,
-            MatSortModule, MatDialogModule, MatMenuModule] 
+            MatSortModule, MatDialogModule, MatMenuModule, MatListModule] 
 })
 export class AngularMaterialModule { }

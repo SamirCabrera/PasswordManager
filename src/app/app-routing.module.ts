@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'homepage',
     pathMatch: 'full'
+  },
+  {
+    component: HomepageComponent,
+    path: 'homepage'
   }
 ];
 

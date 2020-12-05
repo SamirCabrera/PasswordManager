@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Crear categoria</h1>
+
+<div mat-dialog-content>
+  <p>Ingresa un nombre para la nueva categoria</p>
+
+  <mat-form-field class="div_form">
+    <mat-label>Categoria</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions class="div_buttons">
+  <button mat-button (click)="exit()" class="buttons">Salir</button>
+  <button mat-button cdkFocusInitial class="buttons">Crear</button>
+</div>

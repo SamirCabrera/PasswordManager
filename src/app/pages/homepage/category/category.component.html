@@ -1,0 +1,21 @@
+<div>
+    <div class="div_title_category">
+        <h1 class="title_category">Categorias</h1>
+    </div>
+
+    <div class="div_subtitle_category">
+        <h2 class="subtitle_category">
+            Categoria selecionada: {{shoes.selectedOptions.selected[0]?.value}}
+        </h2>
+    </div>
+
+    <mat-selection-list #shoes [multiple]="false">
+
+        <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+          {{shoe}}
+        </mat-list-option>
+
+    </mat-selection-list>
+
+</div>
+

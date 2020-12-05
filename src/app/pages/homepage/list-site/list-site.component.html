@@ -1,0 +1,77 @@
+<div class="div_accordion">
+  <h1 class="title_list-site">Sitio webs</h1>
+</div>
+
+<div class="div_accordion">
+    <div class="div_buttons">
+        <button mat-button (click)="accordion.openAll()" class="buttons">Expander todos</button>
+        <button mat-button (click)="accordion.closeAll()" class="buttons">Esconder todos</button>
+    </div>
+</div>
+
+<mat-accordion multi>
+
+    <mat-expansion-panel class="mat-accordion">
+
+      <mat-expansion-panel-header class="mat_expansion_panel">
+        <mat-panel-title>
+          Nombre del sitio: Google
+        </mat-panel-title>
+        <mat-panel-description>
+          Fecha de creacion: 12/06/2021
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <div class="div_buttons">
+        <button mat-raised-button class="buttons">Eliminar</button> 
+
+        <button mat-raised-button class="buttons">Ir a direccion url</button> 
+
+        <button mat-raised-button class="buttons">Ver detalles</button> 
+      </div>
+  
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="mat-accordion">
+
+        <mat-expansion-panel-header class="mat_expansion_panel">
+          <mat-panel-title>
+            Nombre del sitio: Google
+          </mat-panel-title>
+          <mat-panel-description>
+            Fecha de creacion: 12/06/2021
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <div class="div_buttons">
+          <button mat-raised-button class="buttons">Eliminar</button> 
+  
+          <button mat-raised-button class="buttons">Ir a direccion url</button> 
+  
+          <button mat-raised-button class="buttons">Ver detalles</button> 
+        </div>
+    
+      </mat-expansion-panel>
+  
+      <mat-expansion-panel class="mat-accordion">
+
+        <mat-expansion-panel-header class="mat_expansion_panel">
+          <mat-panel-title>
+            Nombre del sitio: Google
+          </mat-panel-title>
+          <mat-panel-description>
+            Fecha de creacion: 12/06/2021
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <div class="div_buttons">
+          <button mat-raised-button class="buttons">Eliminar</button> 
+  
+          <button mat-raised-button class="buttons">Ir a direccion url</button> 
+  
+          <button mat-raised-button class="buttons">Ver detalles</button> 
+        </div>
+    
+      </mat-expansion-panel>
+
+  </mat-accordion>
