@@ -5,14 +5,14 @@
 
     <div class="div_subtitle_category">
         <h2 class="subtitle_category">
-            Categoria selecionada: {{shoes.selectedOptions.selected[0]?.value}}
+            Categoria selecionada: {{categorys.selectedOptions.selected[0]?.value}}
         </h2>
     </div>
 
-    <mat-selection-list #shoes [multiple]="false">
+    <mat-selection-list #categorys [multiple]="false">
 
-        <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
-          {{shoe}}
+        <mat-list-option *ngFor="let category of allCategorys" [value]="category">
+          {{category.name}}
         </mat-list-option>
 
     </mat-selection-list>
