@@ -1,8 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { INewCategory } from 'src/app/interfaces/new-category';
 import { CategoryService } from 'src/app/services/category.service';
-import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-category-modal',
