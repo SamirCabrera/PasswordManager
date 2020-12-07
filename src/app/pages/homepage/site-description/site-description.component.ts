@@ -18,6 +18,7 @@ export class SiteDescriptionComponent implements OnInit, OnChanges {
   public hide = true;
   public inputDisabled = true;
   public newSite: INewSite;
+  public toggleCheck = true;
 
   constructor(private readonly siteSerive: SiteService, private readonly categoryService: CategoryService) { }
 
@@ -32,11 +33,16 @@ export class SiteDescriptionComponent implements OnInit, OnChanges {
     this.initForm();
   }
 
+  public cc() {
+    console.log(this.toggleCheck);
+  }
+
   public initForm() {
     this.siteForm = new FormGroup({
       name: new FormControl(null),
       password: new FormControl(null),
-      user: new FormControl(null)
+      user: new FormControl(null),
+      url: new FormControl(null)
     })
   }
 
@@ -44,6 +50,7 @@ export class SiteDescriptionComponent implements OnInit, OnChanges {
     this.siteForm.get('name').setValue(this.site.name);
     this.siteForm.get('password').setValue(this.site.password);
     this.siteForm.get('user').setValue(this.site.user);
+    this.siteForm.get('url').setValue(this.site.url);
   }
 
   public saveEdit(): void {
@@ -51,7 +58,8 @@ export class SiteDescriptionComponent implements OnInit, OnChanges {
     this.newSite = {
       name: this.siteForm.get('name').value,
       password: this.siteForm.get('password').value,
-      user: this.siteForm.get('user').value
+      user: this.siteForm.get('user').value,
+      url: this.siteForm.get('url').value
     }
 
     this.siteSerive.editSite(this.idCategory, this.site.id, this.newSite).subscribe((res: any) => { 

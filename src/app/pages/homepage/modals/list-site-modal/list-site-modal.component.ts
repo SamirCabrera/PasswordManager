@@ -15,6 +15,7 @@ export class ListSiteModalComponent implements OnInit {
   public name: string;
   public password: string;
   public user: string;
+  public url: string;
 
   constructor(public dialogRef: MatDialogRef<ListSiteModalComponent>, @Inject(MAT_DIALOG_DATA) public data: string,
               private readonly siteService: SiteService) { }
@@ -31,7 +32,8 @@ export class ListSiteModalComponent implements OnInit {
     this.site = {
       name: this.name,
       password: this.password,
-      user: this.user
+      user: this.user,
+      url: this.url
     }
 
     this.siteService.createSite(this.data, this.site).subscribe( (res: any) => {

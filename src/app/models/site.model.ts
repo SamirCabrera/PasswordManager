@@ -14,4 +14,7 @@ export class SiteModel extends BaseModel {
 
     @JsonProperty('user', String)
     public user: string = undefined
+
+    @JsonProperty('url', String)
+    public url: string = undefined
 }
