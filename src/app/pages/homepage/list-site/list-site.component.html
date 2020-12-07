@@ -9,13 +9,13 @@
     </div>
 </div>
 
-<mat-accordion multi>
+<mat-accordion multi *ngFor="let site of sites">
 
     <mat-expansion-panel class="mat-accordion">
 
       <mat-expansion-panel-header class="mat_expansion_panel">
         <mat-panel-title>
-          Nombre del sitio: Google
+          Nombre del sitio: {{ site.name }}
         </mat-panel-title>
         <mat-panel-description>
           Fecha de creacion: 12/06/2021
@@ -23,55 +23,13 @@
       </mat-expansion-panel-header>
   
       <div class="div_buttons">
-        <button mat-raised-button class="buttons">Eliminar</button> 
+        <button mat-raised-button class="buttons" (click)="deleteSite(site.id)">Eliminar</button> 
 
         <button mat-raised-button class="buttons">Ir a direccion url</button> 
 
-        <button mat-raised-button class="buttons">Ver detalles</button> 
+        <button mat-raised-button class="buttons" (click)="sendSite(site)">Ver detalles</button> 
       </div>
   
     </mat-expansion-panel>
 
-    <mat-expansion-panel class="mat-accordion">
-
-        <mat-expansion-panel-header class="mat_expansion_panel">
-          <mat-panel-title>
-            Nombre del sitio: Google
-          </mat-panel-title>
-          <mat-panel-description>
-            Fecha de creacion: 12/06/2021
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-    
-        <div class="div_buttons">
-          <button mat-raised-button class="buttons">Eliminar</button> 
-  
-          <button mat-raised-button class="buttons">Ir a direccion url</button> 
-  
-          <button mat-raised-button class="buttons">Ver detalles</button> 
-        </div>
-    
-      </mat-expansion-panel>
-  
-      <mat-expansion-panel class="mat-accordion">
-
-        <mat-expansion-panel-header class="mat_expansion_panel">
-          <mat-panel-title>
-            Nombre del sitio: Google
-          </mat-panel-title>
-          <mat-panel-description>
-            Fecha de creacion: 12/06/2021
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-    
-        <div class="div_buttons">
-          <button mat-raised-button class="buttons">Eliminar</button> 
-  
-          <button mat-raised-button class="buttons">Ir a direccion url</button> 
-  
-          <button mat-raised-button class="buttons">Ver detalles</button> 
-        </div>
-    
-      </mat-expansion-panel>
-
-  </mat-accordion>
+</mat-accordion>

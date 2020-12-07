@@ -3,10 +3,10 @@
 <div mat-dialog-content>
 
   <div class="div_form_field">
-    <p class="subtitle_p">Ingresa una URL para el nuevo sitio web</p>
+    <p class="subtitle_p">Ingresa el nombre del sitio para el nuevo sitio web</p>
     <mat-form-field class="div_form">
-      <mat-label>Url</mat-label>
-      <input matInput>
+      <mat-label>Nombre</mat-label>
+      <input matInput [(ngModel)]="name">
     </mat-form-field>
   </div>
 
@@ -14,7 +14,7 @@
     <p class="subtitle_p">Ingresa el nombre del usuario para el nuevo sitio web</p>
     <mat-form-field class="div_form">
       <mat-label>Usuario</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="user">
     </mat-form-field>
   </div>
 
@@ -22,18 +22,10 @@
     <p class="subtitle_p">Ingresa una contraseña para el nuevo sitio web</p>
     <mat-form-field class="div_form">
       <mat-label>Contraseña</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
+      <input matInput [type]="hide ? 'password' : 'text'"  [(ngModel)]="password">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
-    </mat-form-field>
-  </div>
-
-  <div class="div_form_field">
-    <p class="subtitle_p">Ingresa una Descripcion para el nuevo sitio web</p>
-    <mat-form-field class="div_form">
-      <mat-label>Description</mat-label>
-      <textarea style="resize: none" matInput></textarea>
     </mat-form-field>
   </div>
 
@@ -41,5 +33,5 @@
 
 <div mat-dialog-actions class="div_buttons">
   <button mat-button (click)="exit()" class="buttons">Salir</button>
-  <button mat-button cdkFocusInitial class="buttons">Crear</button>
+  <button mat-button cdkFocusInitial class="buttons" (click)="createSite()">Crear</button>
 </div>

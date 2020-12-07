@@ -12,37 +12,38 @@
     <mat-card class="mat_card">
         <div>
 
+          <form [formGroup]="siteForm">
             <div>
               <mat-form-field class="div_form">
                 <mat-label>Url</mat-label>
-                <input matInput [disabled]="inputDisabled" value="">
+                <input matInput [disabled]="inputDisabled" formControlName="name">
               </mat-form-field>
             </div>
           
             <div>
               <mat-form-field class="div_form">
                 <mat-label>Usuario</mat-label>
-                <input matInput [disabled]="inputDisabled" value="">
+                <input matInput [disabled]="inputDisabled" value="" formControlName="user">
               </mat-form-field>
             </div>
           
             <div>
               <mat-form-field class="div_form">
                 <mat-label>Contraseña</mat-label>
-                <input matInput [disabled]="inputDisabled" value="" [type]="hide ? 'password' : 'text'">
+                <input matInput [disabled]="inputDisabled" value="" [type]="hide ? 'password' : 'text'" formControlName="password">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
               </mat-form-field>
             </div>
-          
-            <div>
-              <mat-form-field class="div_form">
-                <mat-label>Description</mat-label>
-                <textarea style="resize: none" matInput [disabled]="inputDisabled" value=""></textarea>
-              </mat-form-field>
-            </div>
-          
-          </div>
+          </form>
+
+        </div>
     </mat-card>
+</div>
+
+<div class="div_main">
+  <div class="div_buttons">
+      <button mat-button class="buttons" (click)="saveEdit()">Enviar site actualizado</button>
+  </div>
 </div>

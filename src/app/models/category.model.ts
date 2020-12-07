@@ -1,6 +1,5 @@
 import { BaseModel } from './base.model';
 import { JsonObject, JsonProperty } from 'json2typescript';
-import { SiteConverter } from './converters/site.converter';
 import { SiteModel } from './site.model';
 
 @JsonObject('Category')
@@ -11,6 +10,6 @@ export class CategoryModel extends BaseModel {
     @JsonProperty('name', String)
     public name: string = undefined
 
-    @JsonProperty('site', SiteConverter)
-    public site: Array<SiteModel> = undefined;
+    @JsonProperty('sites', [SiteModel], true)
+    public sites?: Array<SiteModel> = undefined;
 }

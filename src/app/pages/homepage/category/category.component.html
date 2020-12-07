@@ -11,8 +11,17 @@
 
     <mat-selection-list #categorys [multiple]="false">
 
-        <mat-list-option *ngFor="let category of allCategorys" [value]="category">
-          {{category.name}}
+        <mat-list-option *ngFor="let category of allCategorys" [value]="category" (click)="sendIdCategory(category.id)">
+
+          <mat-list-item (click)="sendSites(category.sites)">
+            <button mat-mini-fab (click)="deleteCategory(category.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+            <div mat-line>{{category.name}}</div>
+
+          </mat-list-item>
+
         </mat-list-option>
 
     </mat-selection-list>

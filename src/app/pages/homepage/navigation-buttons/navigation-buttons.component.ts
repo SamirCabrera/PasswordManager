@@ -1,5 +1,8 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CategoryService } from 'src/app/services/category.service';
 import { CategoryModalComponent } from '../modals/category-modal/category-modal.component';
 import { ListSiteModalComponent } from '../modals/list-site-modal/list-site-modal.component';
 
@@ -9,8 +12,10 @@ import { ListSiteModalComponent } from '../modals/list-site-modal/list-site-moda
   styleUrls: ['./navigation-buttons.component.css']
 })
 export class NavigationButtonsComponent implements OnInit {
+  @Input() idCategory: string;
 
-  constructor(public dialog: MatDialog) { }
+
+  constructor(private dialog: MatDialog, private readonly categoryService: CategoryService) { }
 
   ngOnInit(): void {
   }
@@ -19,15 +24,17 @@ export class NavigationButtonsComponent implements OnInit {
     const modal = this.dialog.open(CategoryModalComponent);
 
     modal.afterClosed().subscribe(result => {
-      console.log('Modal abierto');
+      this.categoryService.emitCategory(true);
     })
   }
 
   public createListSite() {
-    const modal = this.dialog.open(ListSiteModalComponent);
+    const modal = this.dialog.open(ListSiteModalComponent, { data: this.idCategory});
 
-    modal.afterClosed().subscribe(result => {
-      console.log('Modal abierto');
+    modal.afterClosed().subscribe(result => { 
+      this.categoryService.getCategorys().subscribe((res: any) => { 
+        this.categoryService.emitCategory(true);
+      })
     })
   }
 

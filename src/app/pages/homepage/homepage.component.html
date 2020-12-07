@@ -1,19 +1,19 @@
 <mat-grid-list cols="4" rowHeight="96px">
 
     <mat-grid-tile [colspan]="4" [rowspan]="1" style="background-color: rgb(35 35 35);">
-        <app-navigation-buttons class="component_child"></app-navigation-buttons>
+        <app-navigation-buttons class="component_child" [idCategory]="idCategory"></app-navigation-buttons>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="8" style="background-color: rgb(35 35 35);">
-        <app-category class="component_child"></app-category>
+        <app-category class="component_child" (idCategory)="sendIdCategory($event)" (sites)="sendSites($event)"></app-category>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="2" [rowspan]="8" style="background-color: rgb(35 35 35);">
-        <app-list-site class="component_child"></app-list-site>
+        <app-list-site class="component_child" [sites]="sites" [idCategory]=idCategory (site)="sendSite($event)"></app-list-site>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="8" style="background-color: rgb(35 35 35);">
-        <app-site-description class="component_child"></app-site-description>
+        <app-site-description class="component_child" [site]="site" [idCategory]="idCategory"></app-site-description>
     </mat-grid-tile>
 
 </mat-grid-list>
